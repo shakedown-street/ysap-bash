@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# changes how debugger statements will print, by default it's '+ '
+PS4='[debug]: '
+
+# turns on debugger, this can also just be provided as an argument
+# when you run the program, for example:
+# bash -x debug
+set -x
+
+read -p 'What is your name? ' name
+
+if [[ $name == 'john' ]]; then
+    echo 'oh hey!  its john!'
+else
+    echo "hey $name, its nice to meet you"
+fi

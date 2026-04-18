@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# name=${1:-John} # provide default value
+# name=${1:-$USER} # default value supports variable expansion
+name=${1:?'You must supply a name'} # make required; just ? (not :?) to accept empty string values
+echo "Hello $name"
+echo "done"
+
+path="$HOME/foo.txt"
+echo "path is ${path}"
+echo "${path/o/a}"
+echo "${path//o/a}"
+
+# Looks gnarly, from beginning of line, match anything up til a slash and
+# delete it, greedily (## instead of #)
+echo "${path##*/}" # basename 
+echo "${path%/*}" # dirname

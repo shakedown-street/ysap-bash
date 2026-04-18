@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Iterate over items
+for thing in foo bar baz bat; do
+    echo "thing is $thing"
+done
+
+# Range from a-f
+for thing in {a..f}; do
+    echo "thing is $thing"
+done
+
+# Range of numbers
+for thing in {1..5}; do
+    echo "thing is $thing"
+done
+
+# C style
+max=5
+for ((i = 0; i < max; i++)); do
+    echo "thing is $i"
+done

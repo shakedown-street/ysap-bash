@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# there is an error with the if statement syntax!
+# fii should be fi!
+#
+# you can use bash -n to check the syntax before
+# executing the program:
+# bash -n syntax-error
+
+echo 'hello'
+
+if true; then
+    echo 'goodbye'
+fii

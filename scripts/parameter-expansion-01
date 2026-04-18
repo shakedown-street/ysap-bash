@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+str="my cool string"
+echo "$str"
+echo "${#str}"
+echo "${str^}"
+echo "${str^^}"
+echo "${str^^o}"
+echo "${str^^[ot]}"
+str="MY COOL STRING"
+echo "${str,,}"
+echo "${str,}"
+echo "${str,,O}"
+echo "${str:3}"
+echo "${str:3:4}"
+
+str="thrice brewed"
+len=${#str}
+arr=()
+for ((i = 0; i < len; i++)); do
+    c=${str:i:1}
+    arr[i]="$c"
+done
+echo "${arr[*]}"

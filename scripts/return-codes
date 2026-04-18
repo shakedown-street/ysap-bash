@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+my-func() {
+    echo 'this goes to stdout' >&1
+    echo 'this goes to stderr' >&2
+}
+
+output=$(my-func 2>&1)
+code=$?
+echo "output=$output, code=$code"

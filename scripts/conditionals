@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# regular if statement
+
+a=2
+b=2
+
+if [[ $a == $b ]]; then
+    echo 'a and b are the same'
+fi
+
+# != operator
+
+c=2
+d=3
+
+if [[ $c != $d ]]; then
+    echo 'c and d are not the same'
+fi
+
+# NOTE: use "bash -c 'help test'" to see all the things you can check,
+# such as -f below!
+
+if [[ -f file.txt ]]; then
+    echo 'file.txt exists and is a file'
+fi
+
+# while loop
+
+while [[ -f file.txt ]]; do
+    echo 'file.txt exists and is a file'
+    sleep 1
+done
+
+# until loop
+
+until [[ -f file.txt ]]; do
+    echo 'file.txt does not exist'
+    sleep 1
+done
+

@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+array=(foo bar baz)
+
+echo "0: ${array[0]}"
+echo "1: ${array[1]}"
+echo "2: ${array[2]}"
+echo
+
+echo "-1: ${array[-1]}"
+echo "-2: ${array[-2]}"
+echo
+
+idx=2
+echo "idx: ${array[$idx]}"
+echo
+
+echo "*: ${array[*]}"
+echo "@: ${array[@]}"
+echo
+
+echo "loop over *"
+for item in "${array[*]}"; do
+  echo "item is $item"
+done
+echo
+
+# This is the proper way to iterate over a loop!  with " quotes and @
+echo "loop over @"
+for item in "${array[@]}"; do
+    echo "item is $item"
+done
+echo
+
+# copy an array
+
+second_array=("${array[@]}")
+
+# append to array
+second_array+=(buddy guy joe)
+
+echo "loop over copied array"
+for item in "${second_array[@]}"; do
+    echo "item is $item"
+done

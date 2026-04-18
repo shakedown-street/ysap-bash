@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+for i in {1..10}; do
+    echo "$i"
+done
+
+for i in {1..10..2}; do
+    echo "$i"
+done
+
+for i in foo {1..10} bar {1..4} baz; do
+    echo "$i"
+done
+
+# you cannot use variable expansion in numeric braces, in that case just
+# use a C style for loop
+max=4
+for (( i = 0; i <= max; i++ )); do
+    echo "$i"
+done

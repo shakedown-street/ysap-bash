@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+datefmt='%Y/%m/%d %H:%M:%S'
+date +"$datefmt"
+
+printf 'the date is %(%Y/%m/%d %H:%M:%S)T\n'
+printf 'the date is %(%Y/%m/%d %H:%M:%S)T name=%s\n' -1 john

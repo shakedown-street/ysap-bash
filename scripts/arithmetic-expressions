@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+thing=$(( 2 + 2 ))
+echo "thing is $thing"
+
+# using variables
+a=2
+b=3
+echo "a+b=$(( $a + $b ))"
+
+# assignment
+((c = a + b))
+echo "c is $c"
+
+# increment
+i=0
+((i++))
+echo "i is $i"
+
+# ternary
+a=2
+b=3
+((max = a > b ? a : b))
+echo "max is $max"

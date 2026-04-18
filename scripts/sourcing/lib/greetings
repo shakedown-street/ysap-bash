@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+greet() {
+    echo "hello $1"
+}
+
+goodbye() {
+    echo "goodbye $1"
+}
+
+# This is like if __name__ == "main" in python
+# It will only run if you execute this script directly rather than sourcing it
+# This can be useful to be able to test the functions in the library
+if ! (return 2>/dev/null); then
+    greet dave
+    goodbye john
+fi

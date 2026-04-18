@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if ! declare -A array; then
+    echo 'Could not create a declarative array' >&2;
+    exit 1
+fi
+
+declare -A arr
+
+arr[foo]=1
+arr[bar]=2
+arr[baz]=3
+
+echo "${arr[foo]}"
+echo "${arr[bar]}"
+echo "${arr[baz]}"
+
+echo "${arr[*]}"
+echo "${arr[@]}"
+
+# get keys instead of value
+echo "${!arr[*]}"
+echo "${!arr[@]}"
