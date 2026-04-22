@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# open a file descriptor to pipe fifo and store the descriptor number as $fd
+exec {fd}<>pipe
+
+client() {
+    local name=$1
+    while true; do
+        sleep 3
+        echo "[client $name] hello" >&$fd
+    done
+}
+
+client foo &
+client bar &
+client baz &
+
+# -u tells read to read from a file descriptor instead of stdin
+# that means we don't have to have a while true like the reader example
+while read -r -u "$fd" line; do
+    echo "[read line] $line"
+done

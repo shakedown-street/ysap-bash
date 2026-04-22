@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+re='^(john|dave)$'
+input='john'
+
+if [[ $input =~ $re ]]; then
+    echo 'match'
+
+    printf '%s\n' "${BASH_REMATCH[@]}"
+else
+    echo 'no match'
+fi
